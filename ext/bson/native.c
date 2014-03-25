@@ -20,6 +20,17 @@
 #include <sys/types.h>
 #endif
 
+#ifdef _WIN32
+#ifdef(__MINGW64_VERSION_MAJOR)
+#ifndef _PC_64
+#define _PC_64 0x00000000
+#endif
+#ifndef _MCW_PC
+#define _MCW_PC 0x00030000
+#endif
+#endif
+#endif
+
 #include <stdint.h>
 #include <time.h>
 #include <unistd.h>
